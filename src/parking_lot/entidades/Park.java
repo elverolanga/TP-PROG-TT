@@ -8,6 +8,8 @@ public class Park {
     public static void adicionarVeiculo(){
         String matricula = sc.next();
         String marca = sc.next();
+        String modelo = sc.next();
+        Veiculo v = new Veiculo(matricula,modelo,marca);
     }
 
 

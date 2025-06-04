@@ -6,22 +6,18 @@ public class Veiculo {
     private String marca;
     private int id;
 
-
-    public Veiculo(String matricula, String modelo,String marca, int id){
+    public Veiculo(String matricula, String modelo,String marca){
         this.matricula = matricula;
         this.modelo = modelo;
         this.marca =  marca;
+    }
+    public Veiculo(int id, String matricula, String modelo,String marca){
         this.id = id;
+        this.matricula = matricula;
+        this.modelo = modelo;
+        this.marca =  marca;
     }
     public Veiculo(){}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getMatricula() {
         return matricula;
@@ -39,7 +35,9 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
-
+    public int getId() {
+        return id;
+    }
 
     public String getMarca() {
         return marca;
@@ -49,10 +47,12 @@ public class Veiculo {
         this.marca = marca;
     }
 
-
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String toString(){
-        return "Matricula: " + matricula + " Modelo: " + modelo + " Marca: " + marca;
+        return "Matricula: " + matricula + " Modelo: " + modelo + " ID: " + id + " Marca: " + marca;
     }
 
 }
