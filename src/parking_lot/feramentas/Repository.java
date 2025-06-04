@@ -9,14 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Repository {
-    public static Connection getConnection() {
+    public static Connection getConnection(){
+        try {
+            Class<?> driver =  Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         Connection con = null;
         String url = "jdbc:mysql://localhost:3306/parking_lot";
         String user = "root";
         String password = "lanx3ry";
         try{
             con = DriverManager.getConnection(url, user, password);
-            con.close();
         }catch (SQLException e){
             System.out.println("Erro ao conectar: " + e.getMessage());;
         }
@@ -24,10 +29,12 @@ public class Repository {
     }
 
     public static void create(Vaga vaga){
-        Connection con = getConnection();
+
         String insertQuery = "INSERT INTRO vaga (marca, modelo, matricula, timestamp) VALUES (?, ?, ?)";
 
-        try(PreparedStatement ps = con.prepareStatement(insertQuery)){
+        try(
+                Connection con = getConnection();
+                PreparedStatement ps = con.prepareStatement(insertQuery)){
             //ps.setInt(1, vaga.getId());
             //ps.setInt(2, vaga.getVeiculo().getId());
             ps.setString(1, vaga.getVeiculo().getMarca());
