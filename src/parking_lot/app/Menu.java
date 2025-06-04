@@ -1,7 +1,7 @@
 package parking_lot.app;
 
 import parking_lot.entidades.Park;
-
+import java.util.Scanner;
 import java.util.Scanner;
 
 public class Menu {
@@ -9,13 +9,14 @@ public class Menu {
     public static void main(String[] args) {
 
         System.out.println(" => Bem-Vindo ao Parque de Estacionamento <= ");
-        System.out.println(" => Escolha Uma opcao: <= ");
         System.out.println(" 1: Adicionar um veiculo; ");
         System.out.println(" 2: Listar Veiculos; ");
         System.out.println(" 3: Remover Veiculo; ");
         System.out.println(" 0: Sair do Parque; ");
+        System.out.println(" => Escolha Uma opcao: <= ");
+        int option = sc.nextInt();
 
-        int option = 0;
+
         switch(option){
             case 1:
                 Park.registrarVeiculo();
