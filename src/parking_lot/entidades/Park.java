@@ -3,15 +3,39 @@ import parking_lot.feramentas.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Park {
 
-    public static void eliminarCliente(int id){
+    static Scanner sc = new Scanner(System.in);
+    public static void registrarVeiculo(){
+        System.out.println("Insira a marca do veiculo");
+        String marca = sc.nextLine();
+
+        System.out.println("Insira o modelo do veiculo");
+        String modelo = sc.nextLine();
+
+        System.out.println("Insira a matricula do veiculo");
+        String matricula = sc.nextLine();
+
+        Veiculo v = new Veiculo(marca, modelo, matricula);
+        Vaga vaga = new Vaga(v);
+
+        Repository.create(vaga);
+    }
+
+    public static void listarVeiculos(){
+        for(Vaga v : Repository.readAll()){
+            System.out.println(v.toString());
+        }
+    }
+
+    public static void removerVeiculo(int id){
         Repository.delete(id);
     }
 
     public static void main(String[] args) {
-
+        listarVeiculos();
     }
 }
