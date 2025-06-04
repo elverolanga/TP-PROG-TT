@@ -64,7 +64,7 @@ public class Repository {
         return vagas;
     }
 
-    public static void delete(int id, Vaga vaga){
+    public static void delete(int id){
         String selectQuery = "SELECT id_veiculo FROM vaga WHERE id - ?";
         String deleteVaga = "DELETE FROM vaga WHERE id = ?";
 

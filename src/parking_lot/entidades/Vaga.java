@@ -10,13 +10,19 @@ public class Vaga {
     public Vaga(){
 
     }
-    public Vaga(int id, Veiculo veiculo, LocalDateTime timestamp) {
+    public Vaga(Veiculo veiculo) {
         this.id = id;
+        this.veiculo = veiculo;
+        this.ts = LocalDateTime.now();
+    }
+
+
+    public Vaga(Veiculo veiculo, LocalDateTime timestamp) {
         this.veiculo = veiculo;
         this.ts = timestamp;
     }
-
-    public Vaga(Veiculo veiculo, LocalDateTime timestamp) {
+    public Vaga(int id, Veiculo veiculo, LocalDateTime timestamp) {
+        this.id = id;
         this.veiculo = veiculo;
         this.ts = timestamp;
     }

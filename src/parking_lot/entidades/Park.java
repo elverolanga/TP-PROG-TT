@@ -6,5 +6,7 @@ import java.util.ArrayList;
 
 public class Park {
 
+    public static void eliminarCliente(int id){
 
+    }
 }
