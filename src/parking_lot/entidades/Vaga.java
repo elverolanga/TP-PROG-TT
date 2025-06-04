@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Vaga {
     private int id;
     private Veiculo veiculo;
-    private LocalDateTime timestamp;
+    private LocalDateTime ts;
 
     public Vaga(){
 
@@ -13,7 +13,12 @@ public class Vaga {
     public Vaga(int id, Veiculo veiculo, LocalDateTime timestamp) {
         this.id = id;
         this.veiculo = veiculo;
-        this.timestamp = timestamp;
+        this.ts = timestamp;
+    }
+
+    public Vaga(Veiculo veiculo, LocalDateTime timestamp) {
+        this.veiculo = veiculo;
+        this.ts = timestamp;
     }
 
     public int getId() {
@@ -33,10 +38,10 @@ public class Vaga {
     }
 
     public LocalDateTime getTimestamp() {
-        return timestamp;
+        return ts;
     }
 
     public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+        this.ts = timestamp;
     }
 }
