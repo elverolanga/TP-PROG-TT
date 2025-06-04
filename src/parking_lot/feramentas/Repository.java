@@ -7,11 +7,5 @@ import java.io.FileWriter;
 import java.util.List;
 
 public class Repository {
-    private static final String filePath = "parking_lot/ficheiros/clientes.txt";
 
-    public static void writeToFile(List<Vaga> vagas) {
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-
-        }
-    }
 }
