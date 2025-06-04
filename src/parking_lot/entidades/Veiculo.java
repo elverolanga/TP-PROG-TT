@@ -4,14 +4,24 @@ public class Veiculo {
     private String matricula;
     private String modelo;
     private String marca;
+    private int id;
 
 
-    public Veiculo(String matricula, String modelo,String marca){
+    public Veiculo(String matricula, String modelo,String marca, int id){
         this.matricula = matricula;
         this.modelo = modelo;
         this.marca =  marca;
+        this.id = id;
     }
     public Veiculo(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getMatricula() {
         return matricula;
