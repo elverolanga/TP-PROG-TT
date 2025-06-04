@@ -6,6 +6,7 @@ import parking_lot.entidades.Veiculo;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Repository {
@@ -30,7 +31,7 @@ public class Repository {
 
     public static void create(Vaga vaga){
 
-        String insertQuery = "INSERT INTRO vaga (marca, modelo, matricula, timestamp) VALUES (?, ?, ?)";
+        String insertQuery = "INSERT INTO vaga (marca, modelo, matricula, ts) VALUES (?, ?, ?, ?)";
 
         try(
                 Connection con = getConnection();
@@ -39,7 +40,8 @@ public class Repository {
             //ps.setInt(2, vaga.getVeiculo().getId());
             ps.setString(1, vaga.getVeiculo().getMarca());
             ps.setString(2, vaga.getVeiculo().getModelo());
-            ps.setString(3, vaga.getTimestamp().toString());
+            ps.setString(3, vaga.getVeiculo().getMatricula());
+            ps.setString(4, vaga.getTimestamp().toString());
             ps.executeUpdate();
         }catch (SQLException e){
             System.out.println("Erro ao inserir: " + e.getMessage());
@@ -61,8 +63,8 @@ public class Repository {
                 veiculo.setMarca(rs.getString(3));
                 veiculo.setModelo(rs.getString(4));
                 veiculo.setMatricula(rs.getString(5));
-                LocalDateTime timestamp = LocalDateTime.parse(rs.getString(6));
-                Vaga vaga = new Vaga(rs.getInt(1), veiculo, timestamp);
+
+                Vaga vaga = new Vaga(rs.getInt(1), veiculo);
                 vagas.add(vaga);
             }
        }catch(SQLException e){

@@ -7,10 +7,24 @@ public class Vaga {
     private Veiculo veiculo;
     private LocalDateTime ts;
 
+    @Override
+    public String toString() {
+        return "Vaga{" +
+                "id=" + id +
+                ", veiculo=" + veiculo +
+                ", ts=" + ts +
+                '}';
+    }
+
     public Vaga(){
 
     }
     public Vaga(Veiculo veiculo) {
+        this.id = id;
+        this.veiculo = veiculo;
+        this.ts = LocalDateTime.now();
+    }
+    public Vaga(int id, Veiculo veiculo) {
         this.id = id;
         this.veiculo = veiculo;
         this.ts = LocalDateTime.now();

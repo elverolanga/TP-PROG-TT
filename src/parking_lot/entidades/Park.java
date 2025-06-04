@@ -13,7 +13,5 @@ public class Park {
 
     public static void main(String[] args) {
 
-        Veiculo v1 = new Veiculo("toyota", "corolla", "toyo");
-        Vaga vaga = new Vaga();
     }
 }
