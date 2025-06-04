@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Menu {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println(" => Bem-Vindo ao Parque de Estacionamento <= ");
 
         System.out.println("""
                 1. Registar um veiculo
@@ -18,8 +17,8 @@ public class Menu {
         int option = Integer.parseInt(sc.nextLine());
 
         while (option != 0) {
-            switch(option){
-                case 1  -> Park.registrarVeiculo();
+            switch (option) {
+                case 1 -> Park.registrarVeiculo();
                 case 2 -> {
                     System.out.println("Veiculos registrados: \n");
                     Park.listarVeiculos();
@@ -32,13 +31,13 @@ public class Menu {
                 }
             }
             System.out.println("""
-                1. Registar um veiculo
-                2. Listar veiculos
-                3. Apagar veiculo
-                0. Sair
-                """);
+                    1. Registar um veiculo
+                    2. Listar veiculos
+                    3. Apagar veiculo
+                    0. Sair
+                    """);
             option = Integer.parseInt(sc.nextLine());
-        }
 
+        }
     }
 }
