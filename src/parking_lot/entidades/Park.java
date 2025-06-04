@@ -1,8 +1,7 @@
 package parking_lot.entidades;
 import parking_lot.feramentas.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 
@@ -35,7 +34,5 @@ public class Park {
         Repository.delete(id);
     }
 
-    public static void main(String[] args) {
-        listarVeiculos();
-    }
+
 }
