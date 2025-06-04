@@ -3,12 +3,14 @@ package parking_lot.entidades;
 public class Veiculo {
     private String matricula;
     private String modelo;
+    private String marca;
     private int id;
 
-    public Veiculo(String matricula, String modelo, int id){
+    public Veiculo(String matricula, String modelo, int id, String marca){
         this.matricula = matricula;
         this.id = id;
         this.modelo = modelo;
+        this.marca =  marca;
     }
     public Veiculo(){}
 
@@ -32,12 +34,20 @@ public class Veiculo {
         return id;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
     public String toString(){
-        return "Matricula: " + matricula + " Modelo: " + modelo + " ID: " + id;
+        return "Matricula: " + matricula + " Modelo: " + modelo + " ID: " + id + " Marca: " + marca;
     }
 
 }
