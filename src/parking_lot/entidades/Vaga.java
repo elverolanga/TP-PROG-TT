@@ -3,25 +3,15 @@ package parking_lot.entidades;
 import java.time.LocalDateTime;
 
 public class Vaga {
-    private int id;
     private Veiculo veiculo;
     private LocalDateTime timestamp;
 
     public Vaga(){
 
     }
-    public Vaga(int id, Veiculo veiculo, LocalDateTime timestamp) {
-        this.id = id;
+    public Vaga(Veiculo veiculo, LocalDateTime timestamp) {
         this.veiculo = veiculo;
         this.timestamp = timestamp;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Veiculo getVeiculo() {
