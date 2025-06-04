@@ -23,7 +23,7 @@ public class Repository {
         return con;
     }
 
-    public static void create(){
+    public static void create(Vaga vaga){
         Connection con = getConnection();
         String insertQuery = "INSERT INTRO vaga (marca, modelo, matricula, timestamp) VALUES (?, ?, ?)";
 

@@ -7,7 +7,7 @@ public class Vaga {
     private Veiculo veiculo;
     private LocalDateTime ts;
 
-    public Vaga(Veiculo v){
+    public Vaga(){
 
     }
     public Vaga(int id, Veiculo veiculo, LocalDateTime timestamp) {
