@@ -16,7 +16,6 @@ public class Repository {
         String password = "lanx3ry";
         try{
             con = DriverManager.getConnection(url, user, password);
-            con.close();
         }catch (SQLException e){
             System.out.println("Erro ao conectar: " + e.getMessage());;
         }
@@ -25,14 +24,15 @@ public class Repository {
 
     public static void create(Vaga vaga){
         Connection con = getConnection();
-        String insertQuery = "INSERT INTRO vaga (marca, modelo, matricula, timestamp) VALUES (?, ?, ?)";
+        String insertQuery = "INSERT INTO vaga (marca, modelo, matricula, ts) VALUES (?, ?, ?, ?)";
 
         try(PreparedStatement ps = con.prepareStatement(insertQuery)){
             //ps.setInt(1, vaga.getId());
             //ps.setInt(2, vaga.getVeiculo().getId());
             ps.setString(1, vaga.getVeiculo().getMarca());
             ps.setString(2, vaga.getVeiculo().getModelo());
-            ps.setString(3, vaga.getTimestamp().toString());
+            ps.setString(3, vaga.getVeiculo().getMatricula());
+            ps.setString(4, vaga.getTimestamp().toString());
             ps.executeUpdate();
         }catch (SQLException e){
             System.out.println("Erro ao inserir: " + e.getMessage());
@@ -54,8 +54,8 @@ public class Repository {
                 veiculo.setMarca(rs.getString(3));
                 veiculo.setModelo(rs.getString(4));
                 veiculo.setMatricula(rs.getString(5));
-                LocalDateTime timestamp = LocalDateTime.parse(rs.getString(6));
-                Vaga vaga = new Vaga(rs.getInt(1), veiculo, timestamp);
+                //LocalDateTime timestamp = LocalDateTime.parse(rs.getString(6));
+                Vaga vaga = new Vaga(rs.getInt(1), veiculo);
                 vagas.add(vaga);
             }
        }catch(SQLException e){

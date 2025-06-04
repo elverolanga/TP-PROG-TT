@@ -1,6 +1,7 @@
 package parking_lot.entidades;
 import parking_lot.feramentas.Repository;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,10 +33,15 @@ public class Park {
     }
 
     public static void removerVeiculo(int id){
+        LocalDateTime dt = null;
+        for(Vaga v : Repository.readAll()){
+            if(v.getId() == id){
+                dt = v.getTimestamp();
+            }
+        }
+        System.out.println("Veiculo apagado com sucesso!");
+        System.out.println("O veiculo permaneceu das: " + dt.toString() + " até as: " + LocalDateTime.now().toString());
         Repository.delete(id);
     }
 
-    public static void main(String[] args) {
-        listarVeiculos();
-    }
 }
