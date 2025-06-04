@@ -13,15 +13,7 @@ public class Park {
 
     public static void main(String[] args) {
 
-        Veiculo v1 = new Veiculo("toyota", "corolla", "amc 100 mp");
-        Vaga vaga = new Vaga(v1);
-
-        Repository.create(vaga);
-
-        List<Vaga> vvv = Repository.readAll();
-
-        for(Vaga v : vvv){
-            System.out.println(v.toString());
-        }
+        Veiculo v1 = new Veiculo("toyota", "corolla", "toyo");
+        Vaga vaga = new Vaga();
     }
 }
