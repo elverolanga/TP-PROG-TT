@@ -10,7 +10,6 @@ public class Park {
         String marca = sc.next();
         String modelo = sc.next();
         Veiculo v = new Veiculo(matricula,modelo,marca);
+        Vaga vaga = new Vaga(v);
     }
-
-
 }
