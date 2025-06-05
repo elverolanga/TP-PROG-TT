@@ -51,8 +51,9 @@ public class Veiculo {
         this.id = id;
     }
 
-    public String toString(){
-        return "Matricula: " + matricula + " Modelo: " + modelo + " ID: " + id + " Marca: " + marca;
+    @Override
+    public String toString() {
+        return String.format("Marca: %-10s | Modelo: %-10s | Matrícula: %s", marca, modelo, matricula);
     }
 
 }
