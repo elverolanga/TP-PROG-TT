@@ -1,6 +1,7 @@
 package parking_lot.entidades;
 import parking_lot.feramentas.Repository;
-
+import java.time.Duration;
+import java.time.LocalDateTime;
 
 import java.util.Scanner;
 
@@ -8,7 +9,9 @@ import java.util.Scanner;
 public class Park {
 
     static Scanner sc = new Scanner(System.in);
+    LocalDateTime horaDeEntrada = LocalDateTime.now();
     public static void registrarVeiculo(){
+
         System.out.println("Insira a marca do veiculo");
         String marca = sc.nextLine();
 
@@ -33,6 +36,13 @@ public class Park {
     public static void removerVeiculo(int id){
         Repository.delete(id);
     }
+
+
+    LocalDateTime horaDeSaida = LocalDateTime.now();
+    Duration duracao = Duration.between(horaDeEntrada,horaDeSaida);
+    Long minutos = duracao.toMinutes();
+    Long segundos = duracao.getSeconds();
+
 
 
 }
