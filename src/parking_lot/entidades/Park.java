@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Park {
 
     static Scanner sc = new Scanner(System.in);
-    LocalDateTime horaDeEntrada = LocalDateTime.now();
+    LocalDateTime horaDeEntrada = LocalDateTime.now(); // Vincular a base de dados!
     public static void registrarVeiculo(){
 
         System.out.println("Insira a marca do veiculo");
