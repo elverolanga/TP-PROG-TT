@@ -31,12 +31,27 @@ public class Menu {
                     Park.removerVeiculo(id);
                 }
                 case 0:
-                    System.exit(0);// Melhorar este aspecto!
+                    sair();
                 default:
                     System.out.println("ERROR.");
             }
 
         }while(option != 0);
 
+
+    }
+    public static void sair(){
+        String msg = "Saindo do Parque...";
+        for(char c : msg.toCharArray()){
+            System.out.print(c);
+            System.out.flush();
+            try{
+                Thread.sleep(150);
+            }catch (InterruptedException e ){
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.println();
+        System.exit(0);
     }
 }
