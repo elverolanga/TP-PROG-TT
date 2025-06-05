@@ -5,11 +5,11 @@ import java.time.LocalDateTime;
 public class Vaga {
     @Override
     public String toString() {
-        return "Vaga{" +
-                "id=" + id +
-                ", veiculo=" + veiculo +
-                ", ts=" + ts +
-                '}';
+        return "Vaga => " +
+                "|id: " + id +
+                "| veiculo: " + veiculo +
+                "| Hora de Chegada: " + ts.getHour() +":" +ts.getMinute() +
+                '|';
     }
 
     private int id;

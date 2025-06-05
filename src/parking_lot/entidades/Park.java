@@ -25,7 +25,8 @@ public class Park {
         Vaga vaga = new Vaga(v);
 
         Repository.create(vaga);
-        System.out.println("Veiculo:" + matricula + " Adicionada ao Parque.");
+        System.out.println("Veiculo:" + matricula + " Adicionado ao Parque.");
+        System.out.println("Hora de Entrada: " + LocalDateTime.now().getHour() +":"+LocalDateTime.now().getMinute());
     }
 
     public static void listarVeiculos(){
