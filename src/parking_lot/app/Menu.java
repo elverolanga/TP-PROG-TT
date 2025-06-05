@@ -8,35 +8,36 @@ import java.util.Scanner;
 public class Menu {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        int option = 0;
-        do{
+        System.out.println(" 1: Adicionar um veiculo; ");
+        System.out.println(" 2: Listar Veiculos; ");
+        System.out.println(" 3: Remover Veiculo; ");
+        System.out.println(" 0: Sair do Parque; ");
+        System.out.println(" => Escolha Uma opcao: <= ");
+        int option = Integer.parseInt(sc.nextLine());
+        while (option != 0) {
+
+            switch (option) {
+                case 1 -> Park.registrarVeiculo();
+                case 2 -> Park.listarVeiculos();
+                case 3 -> {
+                    Park.listarVeiculos();
+                    System.out.println("Insira o id do veiculo que deseja remover");
+                    int id = Integer.parseInt(sc.nextLine());
+                    Park.removerVeiculo(id);
+                }
+                case 0 -> {
+                    sc.close();
+                    break;
+                }
+                default -> System.out.println("ERROR.");
+            }
             System.out.println(" 1: Adicionar um veiculo; ");
             System.out.println(" 2: Listar Veiculos; ");
             System.out.println(" 3: Remover Veiculo; ");
             System.out.println(" 0: Sair do Parque; ");
             System.out.println(" => Escolha Uma opcao: <= ");
             option = Integer.parseInt(sc.nextLine());
-
-        switch(option){
-            case 1:
-                Park.registrarVeiculo();
-            case 2:
-                Park.listarVeiculos();
-            case 3:
-                {
-                Park.listarVeiculos();
-                System.out.println("Insira o id do veiculo que deseja remover");
-                int id = Integer.parseInt(sc.nextLine());
-                Park.removerVeiculo(id);
-                }
-                case 0:
-                    sair();
-                default:
-                    System.out.println("ERROR.");
-            }
-
-        }while(option != 0);
-
+        }
 
     }
     public static void sair(){

@@ -34,10 +34,17 @@ public class Park {
     }
 
     public static void removerVeiculo(int id){
+        LocalDateTime horaEntrada = null;
+        for(Vaga v : Repository.readAll()){
+            if(v.getId() == id){
+                horaEntrada = v.getTimestamp();
+            }
+        }
+
+        double valor = (((LocalDateTime.now().getHour() * 3600) + (LocalDateTime.now().getMinute() * 60)) - ((horaEntrada.getHour() * 3600) + (horaEntrada.getMinute() * 60))) * 0.3;
+        System.out.println("O veiculo ficou das: " + horaEntrada.getHour() + ":" +  horaEntrada.getMinute() + " até as: " + LocalDateTime.now().getHour() + ":" + LocalDateTime.now().getMinute() + " e devera pagar: " + valor);
         Repository.delete(id);
     }
 
-    public static void main(String[] args) {
-        listarVeiculos();
-    }
+
 }

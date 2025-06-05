@@ -5,6 +5,7 @@ import parking_lot.entidades.Veiculo;
 
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +55,9 @@ public class Repository {
                 veiculo.setMarca(rs.getString(3));
                 veiculo.setModelo(rs.getString(4));
                 veiculo.setMatricula(rs.getString(5));
-                //LocalDateTime timestamp = LocalDateTime.parse(rs.getString(6));
-                Vaga vaga = new Vaga(rs.getInt(1), veiculo);
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                LocalDateTime dateTime = LocalDateTime.parse(rs.getString(6), format);
+                Vaga vaga = new Vaga(rs.getInt(1), veiculo, dateTime);
                 vagas.add(vaga);
             }
        }catch(SQLException e){
