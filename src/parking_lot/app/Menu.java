@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Menu {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        int option = 0;
+        int option;
         do{
             System.out.println(" 1: Adicionar um veiculo; ");
             System.out.println(" 2: Listar Veiculos; ");
@@ -35,7 +35,6 @@ public class Menu {
             case 0:
                 sair();
                 break;
-
             default:
                 System.out.println("ERROR.");
                 break;
