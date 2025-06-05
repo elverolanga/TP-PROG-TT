@@ -37,7 +37,5 @@ public class Park {
         Repository.delete(id);
     }
 
-    public static void main(String[] args) {
-        listarVeiculos();
-    }
+
 }

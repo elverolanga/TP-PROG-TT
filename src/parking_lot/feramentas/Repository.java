@@ -13,7 +13,7 @@ public class Repository {
         Connection con = null;
         String url = "jdbc:mysql://localhost:3306/parking_lot";
         String user = "root";
-        String password = "lanx3ry";
+        String password = "1234";
         try{
             con = DriverManager.getConnection(url, user, password);
         }catch (SQLException e){

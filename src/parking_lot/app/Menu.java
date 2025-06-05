@@ -20,8 +20,10 @@ public class Menu {
         switch(option){
             case 1:
                 Park.registrarVeiculo();
+                break;
             case 2:
                 Park.listarVeiculos();
+                break;
             case 3:
                 {
                 Park.listarVeiculos();
@@ -29,10 +31,14 @@ public class Menu {
                 int id = Integer.parseInt(sc.nextLine());
                 Park.removerVeiculo(id);
                 }
-                case 0:
-                    sair();
-                default:
-                    System.out.println("ERROR.");
+                break;
+            case 0:
+                sair();
+                break;
+
+            default:
+                System.out.println("ERROR.");
+                break;
             }
 
         }while(option != 0);
