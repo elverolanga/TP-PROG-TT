@@ -3,14 +3,17 @@ package parking_lot.entidades;
 import java.time.LocalDateTime;
 
 public class Vaga {
+    int cont = 1;
     @Override
     public String toString() {
         return "Vaga => " +
                 "|id: " + id +
-                "| veiculo: " + veiculo +
+                "| " + veiculo +
                 "| Hora de Chegada: " + ts.getHour() +":" +ts.getMinute() +
                 '|';
+
     }
+
 
     private int id;
     private Veiculo veiculo;

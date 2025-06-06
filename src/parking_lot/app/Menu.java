@@ -2,14 +2,16 @@ package parking_lot.app;
 
 import parking_lot.entidades.Park;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
 public class Menu {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        int option, totVagas = 47;
+        int option, totVagas = 42;
         do{
+            System.out.println(" ==> Aramib Park \uD83D\uDE97 <== ");
             System.out.println(" 1: Adicionar um veiculo; ");
             System.out.println(" 2: Listar Veiculos; ");
             System.out.println(" 3: Remover Veiculo; ");
@@ -39,7 +41,7 @@ public class Menu {
                 sair();
                 break;
             default:
-                System.out.println("ERROR.");
+                System.out.println("ERROR, Insira um numero na lista");
                 break;
             }
 
@@ -59,6 +61,7 @@ public class Menu {
             }
         }
         System.out.println();
+        System.out.println("Parque Fechado.");
         System.exit(0);
     }
 }
