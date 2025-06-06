@@ -12,9 +12,9 @@ import java.util.List;
 public class Repository {
     public static Connection getConnection() {
         Connection con = null;
-        String url = "jdbc:mysql://localhost:3306/parking_lot";
-        String user = "root";
-        String password = "1234";
+        String url = "jdbc:mysql://localhost:3306/schema_name";
+        String user = "username";
+        String password = "password";
         try{
             con = DriverManager.getConnection(url, user, password);
         }catch (SQLException e){
